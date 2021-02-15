@@ -1,6 +1,10 @@
 package com.ryau.demo.Task;
+import org.apache.tomcat.jni.Local;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 
 @Entity
 @Table
@@ -22,8 +26,6 @@ public class Task {
     private LocalDateTime creationDate;
     private LocalDateTime dueDate;
     private Boolean isDone;
-    //private String place;
-
 
     public Task() {
     }
@@ -92,6 +94,7 @@ public class Task {
     public void setDone(Boolean done) {
         isDone = done;
     }
+
 
     @Override
     public String toString() {

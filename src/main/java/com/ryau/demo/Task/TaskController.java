@@ -1,9 +1,7 @@
 package com.ryau.demo.Task;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,10 @@ public class TaskController {
     @GetMapping
     public List<Task> getTasks(){
        return taskService.getTasks();
+    }
+
+    @PostMapping
+    public void registerTask(@RequestBody Task task){
+        taskService.addTask(task);
     }
 }
